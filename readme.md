@@ -2,7 +2,7 @@
 
 This module restart the app as a detached electron process,
 allowing an electron app to be started from terminal and
-survive parent process closure. 
+survive parent process closure.
 
 [![NPM module](https://img.shields.io/npm/v/electron-detach.svg)](https://npmjs.org/package/electron-detach)
 [![NPM downloads](https://img.shields.io/npm/dt/electron-detach.svg)](https://npmjs.org/package/electron-detach)
@@ -24,9 +24,10 @@ npm install --save electron-detach
 
 ## Options
 
-* requireCmdlineArg 
+* requireCmdlineArg
 
-only restart the app if --detach command line argument is present. 
+only restart the app if --detach command line argument is present.
+Defaults to false.
 
 ## License
 

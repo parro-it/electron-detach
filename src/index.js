@@ -1,19 +1,21 @@
 const app = require('app');
 const argv = require('yargs').argv;
-const child_process = require('child_process');
+const spawn = require('child_process').spawn;
 
-module.exports = function electronDetach(opts) {
+module.exports = function electronDetach(opts = {}) {
+  if (argv.noDetach) {
+    // this is already a detached process, exit
+    return;
+  }
 
-  if (argv.detach) {
-    const child = child_process.spawn(
-      'electron',
-      process.argv.slice(1).filter(a => a !== '--detach'),
-      {
-        detached: true
-      }
-    );
+  if (!opts.requireCmdlineArg || argv.detach) {
+    const args = process.argv
+        .slice(1)
+        .filter(a => a !== '--detach')
+        .concat(['--no-detach']);
+
+    const child = spawn('electron', args, { detached: true });
     child.unref();
     app.quit();
-
   }
 };
