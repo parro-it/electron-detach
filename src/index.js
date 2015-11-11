@@ -22,7 +22,7 @@ module.exports = function electronDetach(opts) {
     const err = fs.openSync('./out.log', 'a');
 
     const child = spawn(process.argv[0], args, {
-      detached: false,
+      detached: true,
       stdio: [ 'ignore', out, err ]
     });
     child.unref();
