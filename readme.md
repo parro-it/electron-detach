@@ -22,7 +22,15 @@ npm install --save electron-detach
   });
 ```
 
-## Options
+## Api
+
+Return true if current process is already detached from terminal.
+Otherwise if return false the process will be killed as soon a detached one is spawned. You can use the return value to activate your app only
+if process is not going to be killed.
+
+### Option argument
+
+An optional object containing following property:
 
 * requireCmdlineArg
 

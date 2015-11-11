@@ -1,14 +1,16 @@
 'use strict';
 
-const app = require('app');
 const argv = require('yargs').argv;
 const spawn = require('child_process').spawn;
+const fs = require('fs');
+const app = require('app');
+const tty = require('tty');
 
 module.exports = function electronDetach(opts) {
   opts = opts || {}; //eslint-disable-line
-  if (argv.detachedProcess) {
+  if (argv.detachedProcess || !tty.isatty(process.stdout.fd)) {
     // this is already a detached process, exit
-    return;
+    return true;
   }
   if (!opts.requireCmdlineArg || argv.detach) {
     const args = process.argv
@@ -16,8 +18,15 @@ module.exports = function electronDetach(opts) {
       .filter(a => a !== '--detach')
       .concat(['--detached-process']);
 
-    const child = spawn('electron', args, { detached: true });
+    const out = fs.openSync('./out.log', 'a');
+    const err = fs.openSync('./out.log', 'a');
+
+    const child = spawn(process.argv[0], args, {
+      detached: false,
+      stdio: [ 'ignore', out, err ]
+    });
     child.unref();
     app.quit();
+    return false;
   }
 };
