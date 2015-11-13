@@ -26,5 +26,8 @@
     "child",
     "process",
     "detached"
-  ]
+  ],
+  "dependencies":{
+    "yargs": "^3.29.0"
+  }
 }
