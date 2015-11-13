@@ -26,9 +26,19 @@ npm install --save electron-detach
 
 ## Api
 
-Return true if current process is already detached from terminal.
-Otherwise if return false the process will be killed as soon a detached one is spawned. You can use the return value to activate your app only
-if process is not going to be killed.
+Calling `electronDetach()` returns `true` if current process is already detached from the terminal.
+If calling `electronDetach()` returns `false` the process will be killed as soon a detached one is spawned. 
+
+If calling `electronDetach()` returns `true`, this means that it is good to start your app now. If it returns `false`, your process will shortly be terminated.
+
+```javascript
+const electronDetach = require('electron-detach');
+if(electronDetach()){
+  //Turn your app on, as your app is in a process that is not going to be killed
+} else {
+  //Your app is going to be killed. Respond accordingly
+}
+```
 
 ### Option argument
 
