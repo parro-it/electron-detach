@@ -17,7 +17,9 @@ npm install --save electron-detach
 
 ```javascript
   const electronDetach = require('electron-detach');
-  if (electronDetach({ requireCmdlineArg: false })) { //returns true if your process is a detached child process
+
+  //returns true if your process is a detached child process
+  if (electronDetach({ requireCmdlineArg: false })) {
     app.on('ready',()=>{
        //turn the app on
     });
@@ -27,7 +29,7 @@ npm install --save electron-detach
 ## Api
 
 Calling `electronDetach()` returns `true` if current process is already detached from the terminal.
-If calling `electronDetach()` returns `false` the process will be killed as soon a detached one is spawned. 
+If calling `electronDetach()` returns `false` the process will be killed as soon a detached one is spawned.
 
 If calling `electronDetach()` returns `true`, this means that it is good to start your app now. If it returns `false`, your process will shortly be terminated.
 
