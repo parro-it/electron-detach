@@ -16,10 +16,12 @@ npm install --save electron-detach
 ## Usage
 
 ```javascript
-  import electronDetach from 'electron-detach';
-  electronDetach({
-  	requireCmdlineArg: false
-  });
+  const electronDetach = require('electron-detach');
+  if (electronDetach({ requireCmdlineArg: false })) { //returns true if your process is a detached child process
+    app.on('ready',()=>{
+       //turn the app on
+    });
+  }
 ```
 
 ## Api
