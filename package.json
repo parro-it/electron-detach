@@ -1,24 +1,16 @@
 {
   "name": "electron-detach",
   "description": "restart electron app as a detached child process",
-  "repository": "https://github.com/parro-it/electron-detach.git",
-  "bugs": {
-    "url": "https://github.com/parro-it/electron-detach/issues"
-  },
+  "repository": "parro-it/electron-detach",
   "version": "0.2.1",
   "main": "src/index.js",
-  "engines": {
-    "node": ">=4.1"
-  },
   "author": "parro-it",
   "scripts": {
-    "release-minor": "release-minor",
-    "release-patch": "release-patch",
-    "lint": "lint",
+    "test": "eslint .",
     "prepublish": "lint"
   },
   "eslintConfig": {
-    "extends": "devenv"
+    "extends": "eslint-config-devenv"
   },
   "license": "MIT",
   "keywords": [
