@@ -2,7 +2,7 @@
   "name": "electron-detach",
   "description": "restart electron app as a detached child process",
   "repository": "parro-it/electron-detach",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "andrea@parro.it",
   "scripts": {
     "test": "eslint .",
@@ -21,5 +21,7 @@
   "dependencies": {
     "yargs": "^3.29.0"
   },
-  "files": ["index.js"]
+  "files": [
+    "index.js"
+  ]
 }
