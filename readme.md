@@ -4,6 +4,7 @@ This module restart the app as a detached electron process,
 allowing an electron app to be started from terminal and
 survive parent process closure.
 
+[![Travis Build Status](https://img.shields.io/travis/parro-it/electron-detach.svg)](http://travis-ci.org/parro-it/electron-detach)
 [![NPM module](https://img.shields.io/npm/v/electron-detach.svg)](https://npmjs.org/package/electron-detach)
 [![NPM downloads](https://img.shields.io/npm/dt/electron-detach.svg)](https://npmjs.org/package/electron-detach)
 

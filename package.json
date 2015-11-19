@@ -4,10 +4,9 @@
   "repository": "parro-it/electron-detach",
   "version": "0.2.2",
   "main": "src/index.js",
-  "author": "parro-it",
+  "author": "andrea@parro.it",
   "scripts": {
-    "test": "eslint .",
-    "prepublish": "lint"
+    "test": "eslint ."
   },
   "eslintConfig": {
     "extends": "eslint-config-devenv"
