@@ -52,6 +52,11 @@ An optional object containing following property:
 only restart the app if --detach command line argument is present.
 Defaults to false.
 
+* outputPath
+
+Path to a file where stdout and stderr of detached process will be redirected. Defaults to /dev/null
+
+
 ## License
 
 The MIT License (MIT)
