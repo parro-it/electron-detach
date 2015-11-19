@@ -3,10 +3,10 @@
   "description": "restart electron app as a detached child process",
   "repository": "parro-it/electron-detach",
   "version": "0.2.2",
-  "main": "src/index.js",
   "author": "andrea@parro.it",
   "scripts": {
-    "test": "eslint ."
+    "test": "eslint .",
+    "start": "electron test.js"
   },
   "eslintConfig": {
     "extends": "eslint-config-devenv"
@@ -20,5 +20,6 @@
   ],
   "dependencies": {
     "yargs": "^3.29.0"
-  }
+  },
+  "files": ["index.js"]
 }
