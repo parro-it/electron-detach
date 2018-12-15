@@ -3,7 +3,7 @@
 const argv = require('yargs').argv;
 const spawn = require('child_process').spawn;
 const fs = require('fs');
-const app = require('app');
+const app = require('electron').app;
 const tty = require('tty');
 
 module.exports = function electronDetach(opts) {
